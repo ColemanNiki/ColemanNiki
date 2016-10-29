@@ -6,8 +6,8 @@ namespace ColemanNiki.Models.DataBase
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("colemanniki.target")]
-    public partial class target
+    [Table("colemanniki.version")]
+    public partial class version
     {
         public int id { get; set; }
 
@@ -18,12 +18,9 @@ namespace ColemanNiki.Models.DataBase
         [StringLength(1073741823)]
         public string content { get; set; }
 
-        [StringLength(1073741823)]
-        public string remark { get; set; }
+        public DateTime? createTime { get; set; }
 
-        public DateTime? createtime { get; set; }
-
-        public int? dreamId { get; set; }
+        public DateTime? finishTime { get; set; }
 
         [Column(TypeName = "uint")]
         public long? state { get; set; }

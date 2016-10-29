@@ -12,17 +12,9 @@ namespace ColemanNiki.Controllers
     {
         //
         // GET: /User/
-        DB db = new DB();
         
         public ActionResult Index()
         {
-            dream temp = new dream();
-            temp.userId=1;
-            temp.remark = Encoding.Default.GetBytes("f");
-            temp.state = 1;
-            temp.title = Encoding.Default.GetBytes("f");
-            db.dreams.Add(temp);
-            db.SaveChanges();
             return View();
         }
 

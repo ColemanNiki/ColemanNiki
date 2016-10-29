@@ -11,23 +11,19 @@ namespace ColemanNiki.Models.DataBase
     {
         public int id { get; set; }
 
-        [Required]
         [StringLength(16)]
         public string username { get; set; }
 
-        [Required]
         [StringLength(16)]
         public string password { get; set; }
 
-        [Required]
         [StringLength(16)]
         public string nickname { get; set; }
 
-        [Required]
         [StringLength(255)]
         public string userImage { get; set; }
 
-        public DateTime createtime { get; set; }
+        public DateTime? createtime { get; set; }
 
         [StringLength(16)]
         public string phone { get; set; }

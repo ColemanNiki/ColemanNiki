@@ -11,20 +11,21 @@ namespace ColemanNiki.Models.DataBase
     {
         public int id { get; set; }
 
-        [Column(TypeName = "blob")]
-        [Required]
-        public byte[] title { get; set; }
+        [Column(TypeName = "text")]
+        [StringLength(65535)]
+        public string title { get; set; }
 
-        [Column(TypeName = "mediumblob")]
-        public byte[] content { get; set; }
+        [StringLength(1073741823)]
+        public string content { get; set; }
 
-        [Column(TypeName = "mediumblob")]
-        public byte[] remark { get; set; }
+        [StringLength(1073741823)]
+        public string remark { get; set; }
 
-        public DateTime createtime { get; set; }
+        public DateTime? createtime { get; set; }
 
-        public int userId { get; set; }
+        public int? userId { get; set; }
 
-        public int state { get; set; }
+        [Column(TypeName = "uint")]
+        public long? state { get; set; }
     }
 }

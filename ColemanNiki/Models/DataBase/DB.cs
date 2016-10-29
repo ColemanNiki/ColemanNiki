@@ -15,9 +15,35 @@ namespace ColemanNiki.Models.DataBase
         public virtual DbSet<dream> dreams { get; set; }
         public virtual DbSet<target> targets { get; set; }
         public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<version> versions { get; set; }
+        public virtual DbSet<versionitem> versionitems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<dream>()
+                .Property(e => e.title)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<dream>()
+                .Property(e => e.content)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<dream>()
+                .Property(e => e.remark)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<target>()
+                .Property(e => e.title)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<target>()
+                .Property(e => e.content)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<target>()
+                .Property(e => e.remark)
+                .IsUnicode(false);
+
             modelBuilder.Entity<user>()
                 .Property(e => e.username)
                 .IsUnicode(false);
@@ -40,6 +66,22 @@ namespace ColemanNiki.Models.DataBase
 
             modelBuilder.Entity<user>()
                 .Property(e => e.email)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<version>()
+                .Property(e => e.title)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<version>()
+                .Property(e => e.content)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<versionitem>()
+                .Property(e => e.title)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<versionitem>()
+                .Property(e => e.content)
                 .IsUnicode(false);
         }
     }
