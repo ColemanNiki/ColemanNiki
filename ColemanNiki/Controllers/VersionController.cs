@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ColemanNiki.Models.DataBase;
+using Newtonsoft.Json;
 
 namespace ColemanNiki.Controllers
 {
@@ -17,7 +18,7 @@ namespace ColemanNiki.Controllers
         }
 
         public ActionResult Main()
-        {
+        {   
             return View();
         }
 
@@ -35,9 +36,17 @@ namespace ColemanNiki.Controllers
             db.SaveChanges();
             var data = new
             {
-                name = 'a',
+                name = 1,
             };
             return Json(data);
+        }
+
+        public string pullVersion()
+        {
+            var data = from t in db.versions
+                       select t;
+            string res = JsonConvert.SerializeObject(data);
+            return res;
         }
     }
 }
