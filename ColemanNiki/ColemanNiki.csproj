@@ -89,11 +89,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\star.css" />
     <Content Include="Global.asax" />
+    <Content Include="img\favicon.ico" />
+    <Content Include="img\root.png" />
+    <Content Include="img\star.jpg" />
+    <Content Include="js\antimoderate.js" />
+    <Content Include="js\root.js" />
+    <Content Include="js\star.js" />
+    <Content Include="js\upFile.js" />
+    <Content Include="source\default.mp3" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -102,6 +113,9 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\User\imgUp.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,7 +125,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
